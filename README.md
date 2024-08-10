@@ -69,3 +69,25 @@ jobs:
           script: |
             cd Mrikal-cicd-assignment
             sudo IMAGE_TAG=${{ github.run_number }} docker-compose --env-file .env up -d
+```
+
+## Using the .env File for Configuration
+
+For secure and flexible configuration, use a .env file to pass environment variables to your Docker containers at runtime. This file should contain sensitive information such as database credentials and API keys.
+
+With the help of this command you can pass environment variables to your Docker containers.
+
+``` yaml
+docker-compose --env-file .env up -d
+```
+
+## Env Format
+
+```yaml
+POSTGRES_PASSWORD=
+PGUSER=
+PGHOST=
+PGDATABASE=
+PGPASSWORD=
+PGPORT=
+```
