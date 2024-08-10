@@ -75,7 +75,7 @@ jobs:
 
 For secure and flexible configuration, use a .env file to pass environment variables to your Docker containers at runtime. This file should contain sensitive information such as database credentials and API keys.
 
-With the help of this command you can pass environment variables to your Docker containers.
+With the help of this command you can pass environment variables to your Docker containers in secure manner.
 
 ``` yaml
 docker-compose --env-file .env up -d
