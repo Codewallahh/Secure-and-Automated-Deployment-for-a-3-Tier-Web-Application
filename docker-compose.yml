@@ -10,12 +10,12 @@ services:
       - api
       - client
     restart: always
-    image: tiwari123/3-tier-nginx:v1.15
+    image: tiwari123/3-tier-nginx:v1.${IMAGE_TAG}
     ports:
       - "3050:80"
 
   api:
-    image: tiwari123/3-tier-backend:v1.15
+    image: tiwari123/3-tier-backend:v1.${IMAGE_TAG}
     volumes:
       - /app/node_modules
       - ./server:/app
@@ -30,7 +30,7 @@ services:
     stdin_open: true
     environment:
       - CHOKIDAR_USEPOLLING=true
-    image: tiwari123/3-tier-frontend:v1.15
+    image: tiwari123/3-tier-frontend:v1.${IMAGE_TAG}
     volumes:
       - /app/node_modules
       - ./client:/app
