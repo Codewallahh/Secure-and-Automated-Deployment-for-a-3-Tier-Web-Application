@@ -1,7 +1,7 @@
 # Mrikal-CICD-Assignemnt
 
 
-This repository contains a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and then deploys them to an EC2 instances.
+This repository contains a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and then deploys them to an EC2 instance.
 
 ## Workflow Overview
 The workflow includes two main steps:
