@@ -1,0 +1,25 @@
+name: EC2 CD Pipeline on AWS
+
+on:
+  workflow_run:
+    workflows: ["Docker CI for Docker Hub Pipeline"]
+    types:
+      - completed
+
+jobs:
+  ec2-cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into EC2 instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+         
+            cd Mrikal-cicd-assignment
+          
+            sudo IMAGE_TAG=$((${{github.run_number}})) docker-compose --env-file .env up -d
