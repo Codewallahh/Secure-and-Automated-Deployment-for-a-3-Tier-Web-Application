@@ -21,6 +21,8 @@ jobs:
 
       - name: Build and push Docker image
         run: 
-          cd client && make all TAG=${{ github.run_number }}
+          cd client && sh frontend_build.sh ${{ github.run_number }}
           
-          cd ../server && make all TAG=${{ github.run_number }}
+          cd ../server && sh backend_build.sh ${{ github.run_number }}
+
+          cd ../nginx  && sh nginx.sh ${{ github.run_number }}
