@@ -6,7 +6,7 @@ registry=tiwari123
 repository=3-tier-backend
 
 # Build the Docker image
-docker build -f Dockerfile.dev -t $registry/$repository:$tag .
+docker build  -t $registry/$repository:$tag .
 
 # Push the Docker image to the registry
 docker push $registry/$repository:$tag
