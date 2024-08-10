@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAG=$1  # Capture the first argument passed to the script
+TAG=$1  # Capture the first argument passed to script
 tag=v1.$TAG
 registry=tiwari123
 repository=3-tier-frontend
