@@ -1,4 +1,4 @@
-#Secure and Automated Deployment for a 3-Tier Web Application
+# Secure and Automated Deployment for a 3-Tier Web Application
 
 
 This repository contains a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and then deploys them to an EC2 instance.
